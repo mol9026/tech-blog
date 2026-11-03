@@ -1,0 +1,60 @@
+baseURL = "https://mol9026.github.io/tech-blog/"
+locale = "zh-cn"
+defaultContentLanguage = "zh"
+title = "调优手记"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[pagination]
+  pagerSize = 10
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[params]
+  env = "production"
+  description = "大模型精度与性能调优 · NPU/Ascend · torch.compile / Triton 实战记录"
+  author = "mol9026"
+  defaultTheme = "auto"
+  ShowShareButtons = false
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  dateFormat = "2006-01-02"
+
+  [params.homeInfoParams]
+    Title = "调优手记"
+    Content = "大模型精度与性能调优的一线记录：NPU / Ascend、torch.compile、Triton kernel 融合、精度定位方法论。写给自己，也写给正在同一类问题里打转的人。"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/mol9026"
+
+[markup]
+  [markup.highlight]
+    style = "github-dark"
+    lineNos = false
+    codeFences = true
+    guessSyntax = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions.passthrough]
+      enabled = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['$$', '$$']]
+        inline = [['\(', '\)']]
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
